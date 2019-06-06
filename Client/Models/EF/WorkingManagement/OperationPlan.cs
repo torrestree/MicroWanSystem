@@ -92,5 +92,14 @@ namespace Client.Models.EF.WorkingManagement
         /// 本月差额
         /// </summary>
         public double MonthDiff { get; set; }
+
+        /// <summary>
+        /// 年累计丢单金额
+        /// </summary>
+        public double YearLost { get; set; }
+        /// <summary>
+        /// 年累计丢单比例
+        /// </summary>
+        public double YearLostRate { get; set; }
     }
 }

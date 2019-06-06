@@ -20,7 +20,7 @@ namespace Client.Models.EF.Base.Interfaces
         /// <summary>
         /// 已废弃
         /// </summary>
-        bool Obsoleted { get; set; }
+        bool DataObsoleted { get; set; }
 
         /// <summary>
         /// 创建人

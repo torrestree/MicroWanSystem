@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Client.Models.EF.WorkingManagement
 {
     /// <summary>
-    /// 周计划指派人员
+    /// 执行人
     /// </summary>
     public class WeekPlanOperator : CategoryData<WeekPlan>
     {

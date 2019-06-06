@@ -25,7 +25,7 @@ namespace Client.Models.EF.Base.Abstracts
         /// <summary>
         /// 已废弃
         /// </summary>
-        public bool Obsoleted { get; set; }
+        public bool DataObsoleted { get; set; }
 
         /// <summary>
         /// 创建人

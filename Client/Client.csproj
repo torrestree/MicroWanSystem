@@ -57,6 +57,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -81,6 +83,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtData.cs" />
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtEFBase.cs" />
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtEFCategory.cs" />
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtEFCurd.cs" />
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtEFList.cs" />
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtEFTree.cs" />
+    <Compile Include="DomainModels\Managements\HR\MgtArea.cs" />
+    <Compile Include="DomainModels\Managements\HR\MgtDepartment.cs" />
+    <Compile Include="DomainModels\Managements\HR\MgtEmployee.cs" />
+    <Compile Include="DomainModels\Managements\Sales\MgtContact.cs" />
+    <Compile Include="DomainModels\Managements\Sales\MgtCustomer.cs" />
+    <Compile Include="DomainModels\Managements\Sales\MgtIndustry.cs" />
+    <Compile Include="DomainModels\Managements\Sales\MgtOppty.cs" />
+    <Compile Include="DomainModels\Managements\Sales\MgtOpptyRecord.cs" />
+    <Compile Include="Views\ViewService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,19 +105,33 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DomainModels\Managements\Base\Abstracts\MgtBase.cs" />
+    <Compile Include="DomainModels\Managements\Base\Interfaces\IMgtBase.cs" />
+    <Compile Include="DomainModels\Managements\Base\Interfaces\IMgtData.cs" />
+    <Compile Include="DomainModels\Managements\Base\Interfaces\IMgtEFBase.cs" />
+    <Compile Include="DomainModels\Managements\Base\Interfaces\IMgtEFCategory.cs" />
+    <Compile Include="DomainModels\Managements\Base\Interfaces\IMgtEFList.cs" />
+    <Compile Include="DomainModels\Managements\Base\Interfaces\IMgtEFTree.cs" />
+    <Compile Include="Helpers\AsyncHelper.cs" />
+    <Compile Include="Helpers\EntityHelper.cs" />
+    <Compile Include="Helpers\MessageHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\NoForeignKey.cs" />
     <Compile Include="Models\EF\Base\Abstracts\CategoryData.cs" />
     <Compile Include="Models\EF\Base\Abstracts\ListData.cs" />
     <Compile Include="Models\EF\Base\Abstracts\TreeData.cs" />
     <Compile Include="Models\EF\Base\Interfaces\ICategoryData.cs" />
     <Compile Include="Models\EF\Base\Interfaces\IListData.cs" />
     <Compile Include="Models\EF\Base\Interfaces\ITreeData.cs" />
+    <Compile Include="Models\EF\Context\CtxRuntime.cs" />
     <Compile Include="Models\EF\HR\Area.cs" />
+    <Compile Include="Models\EF\Platform\SystemFn.cs" />
     <Compile Include="Models\EF\Sales\Contact.cs" />
     <Compile Include="Models\EF\Sales\Customer.cs" />
     <Compile Include="Models\EF\Sales\Industry.cs" />
@@ -117,6 +148,8 @@
     <Compile Include="Models\EF\WorkingManagement\PlanType.cs" />
     <Compile Include="Models\EF\WorkingManagement\WeekPlan.cs" />
     <Compile Include="Models\EF\WorkingManagement\WeekPlanOperator.cs" />
+    <Compile Include="Models\Indept\Platform\SqlConn.cs" />
+    <Compile Include="Models\Statics\Platform\LoginInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -145,8 +178,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Indept\" />
-    <Folder Include="Models\Statics\" />
+    <Folder Include="DomainModels\Converters\" />
+    <Folder Include="DomainModels\Managements\Platform\" />
+    <Folder Include="DomainModels\Managements\WorkingManagement\" />
+    <Folder Include="DomainModels\TransArgs\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Platform\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
